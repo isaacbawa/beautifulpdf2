@@ -45,5 +45,4 @@ def docx():
         return send_file(lis,as_attachment=True)
     return  render_template("index.html")
 if __name__=="__main__":
-    app.debug=True
-    app.run()
+    app.run(debug=False, host="0.0.0.0")
