@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pdf to Doc</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 50px 0;
+    }
+
+    h1 {
+      font-size: 36px;
+    }
+
+    img {
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    form input[type="file"] {
+      display: none;
+    }
+
+    form label {
+      display: block;
+      background-color: #0095ff;
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    form input[type="submit"] {
+      background-color: #ffbf00;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    form input[type="submit"]:hover {
+      background-color: #ff9f00;
+    }
+
+    /* Media queries for small screens */
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 24px;
+      }
+
+      form label, form input[type="submit"] {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+
+    /* Media queries for medium and large screens */
+    @media screen and (min-width: 601px) {
+      img {
+        max-width: 80%;
+      }
+
+      form {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      form label, form input[type="submit"] {
+        display: inline-block;
+        margin: 0 10px;
+      }
+    }
+
+    /* Media queries for large screens */
+    @media screen and (min-width: 961px) {
+      img {
+        max-width: 60%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div>
+  </div>
+  <div>
+    <center>
+      <img src="https://www.repairwin.com/wp-content/uploads/2019/09/PDF-to-Word.jpg" alt="PDF TO DOC">
+    </center>
+  </div>
+  <center>
+    <h1>PDF UPLOAD</h1>
+    <div>
+      <form action="/index" method="POST" enctype="multipart/form-data">
+        <label for="file-upload">Choose file</label>
+        <input id="file-upload" type="file" name="filename">
+        <input type="submit" value="Upload">
+        <div style="text-align: center; margin-top: 10px;">
+          <span>File name:</span>
+          <span id="file-name"></span>
+        </div>
+      </form>
+    </div>
+  </center>
+  <script>
+      const fileUpload = document.getElementById("file-upload");
+      const fileName = document.getElementById("file-name");
+
+        fileUpload.addEventListener("change", (event) => {
+      fileName.textContent = event.target.files[0].name;
+    });
+</script>
+</body>
+</html>
+

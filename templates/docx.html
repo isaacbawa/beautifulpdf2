@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Docx</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+        center {
+            margin-top: 50px;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+        input[type="hidden"] {
+            display: none;
+        }
+        button.btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button.btn:hover {
+            background-color: #0062cc;
+        }
+        @media screen and (max-width: 768px) {
+            img {
+                width: 80px;
+                height: 80px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            button.btn {
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+        }
+        @media screen and (max-width: 576px) {
+            img {
+                width: 60px;
+                height: 60px;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            button.btn {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <img src="https://cdn-icons-png.flaticon.com/128/1091/1091007.png" alt="Download Converted Word Doc">
+        <h1>DOWNLOAD DOCX</h1>
+        <form action="/docx" method="POST">
+            <input value={{variable}} id="3" name="filename" type="hidden">
+            <button class="btn"><i class="fa fa-download"></i>Download</button>
+        </form>
+    </center>
+</body>
+</html>
